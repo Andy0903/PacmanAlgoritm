@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Pacman.BlueGhost" Collapsed="true">
+    <Position X="1.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Character\BlueGhost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.Character" Collapsed="true">
+    <Position X="6" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQECAACAAABhoACBCJAAgQEAIIhAgAICCCAAQqAAAI=</HashCode>
+      <FileName>Character\Character.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.Ghost" Collapsed="true">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAKAIAABCAAAgCAQAQgAAABgACAIIEAQQAAEAM=</HashCode>
+      <FileName>Character\Ghost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.OrangeGhost" Collapsed="true">
+    <Position X="3.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAABAAAgAAAAAAABACAAAAAAAAAAAA=</HashCode>
+      <FileName>Character\OrangeGhost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.Player" Collapsed="true">
+    <Position X="10.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoQAgAALgAAABgAABAAAEQAgAABBAIACIAAgAQAAgAg=</HashCode>
+      <FileName>Character\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.RedGhost" Collapsed="true">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Character\RedGhost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.VioletGhost" Collapsed="true">
+    <Position X="8.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAIAEAAAABAACgAAABACABACAAAgAQABAAAA=</HashCode>
+      <FileName>Character\VioletGhost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.Entity" Collapsed="true">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAgAgAAAAACAAAACBAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.GhostFactory" Collapsed="true">
+    <Position X="34.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Factories\GhostFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.ItemFactory" Collapsed="true">
+    <Position X="31" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factories\ItemFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.Game1" Collapsed="true">
+    <Position X="31" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAWAACBIAAAwAIAAAAEAAiAIIhBAAABAACAAAAABQ=</HashCode>
+      <FileName>Game1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.GameBoard" Collapsed="true">
+    <Position X="32.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAoYCCwAAkB5wDAGAAAAwBRYAFAYAKARQEAQIAQA4=</HashCode>
+      <FileName>GameBoard\GameBoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.Highscore" Collapsed="true">
+    <Position X="36.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAABAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAIAAA=</HashCode>
+      <FileName>Highscore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.Cherry" Collapsed="true">
+    <Position X="12.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item\Cherry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.Item" Collapsed="true">
+    <Position X="16.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.Key" Collapsed="true">
+    <Position X="15" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item\Key.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.Melon" Collapsed="true">
+    <Position X="17.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item\Melon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.Pellet" Collapsed="true">
+    <Position X="19.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item\Pellet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.GameOverMenu" Collapsed="true">
+    <Position X="5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAggAABAAAAAAAgAAAAEA=</HashCode>
+      <FileName>Menu\GameOverMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.HighscoreMenu" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAABAAAAAAAAAAAAAAAAAAAgAABAAAAAAAgAAAAEA=</HashCode>
+      <FileName>Menu\HighscoreMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.MainMenu" Collapsed="true">
+    <Position X="2.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAEAAAAAAAAAAAAAACAAAAAAgAABAAAAAAAgAAAAEA=</HashCode>
+      <FileName>Menu\MainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.Menu" Collapsed="true">
+    <Position X="2.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAoABBAAAAAAAgAAAAEA=</HashCode>
+      <FileName>Menu\Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.MenuManager" Collapsed="true">
+    <Position X="34.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAUEgAAEAIAgAgAQAkCgAAYgAAABAAAAAAAAAAAAAII=</HashCode>
+      <FileName>Menu\MenuManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.WinningMenu" Collapsed="true">
+    <Position X="5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menu\WinningMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.Program" Collapsed="true">
+    <Position X="31" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.SongManager" Collapsed="true">
+    <Position X="32.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAEAAAAAAAAAAAAAAAAAIABAAAAAAAABAAACAA=</HashCode>
+      <FileName>SongManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.SoundEffectManager" Collapsed="true">
+    <Position X="34.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACUSAAAABAAAAAAAAAAAAAAAAAEABCiAABAADAAEAhA=</HashCode>
+      <FileName>SoundEffectManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.BlankTile" Collapsed="true">
+    <Position X="21.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAgAAAIIgBgAAAAAAAAAAgABBAAAMAAAAAAAAIAA=</HashCode>
+      <FileName>Tiles\BlankTile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.MapBorderTile" Collapsed="true">
+    <Position X="24" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Tiles\MapBorderTile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.TeleportTile" Collapsed="true">
+    <Position X="26.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAEAAAAIAAAAAQAAAAABACBsAAAAQAgAAAA=</HashCode>
+      <FileName>Tiles\TeleportTile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.Tile" Collapsed="true">
+    <Position X="25.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQAAAAAAAAhAAAAABAAAAAIAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tiles\Tile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman.WallTile" Collapsed="true">
+    <Position X="28.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAQAIQAABBgAAAAAABAAAAAAFAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Tiles\WallTile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.KeyboardUtility" Collapsed="true">
+    <Position X="32.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAABAAQAAA=</HashCode>
+      <FileName>Utilities\KeyboardUtility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.OutlinedText" Collapsed="true">
+    <Position X="36.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEQAAAAAAAAAAAABAAAAQAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Utilities\OutlinedText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.WindowManager" Collapsed="true">
+    <Position X="36.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAQCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\WindowManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.XboxControllerUtility" Collapsed="true">
+    <Position X="31" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARQAAAAAAAAAAgQAEKAAAAABAQAAAAAKAIAAAAAAAA=</HashCode>
+      <FileName>Utilities\XboxControllerUtility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Pacman.Direction" Collapsed="true">
+    <Position X="31" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAI=</HashCode>
+      <FileName>Enums\Direction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Pacman.ItemType" Collapsed="true">
+    <Position X="31" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAEAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAIAAEAAAA=</HashCode>
+      <FileName>Enums\FoodType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Pacman.GameState" Collapsed="true">
+    <Position X="32.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\GameState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Pacman.GhostHealthState" Collapsed="true">
+    <Position X="34.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAQAAAAACAAAAAA=</HashCode>
+      <FileName>Enums\GhostHealthState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Pacman.GhostType" Collapsed="true">
+    <Position X="36.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAhAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\GhostType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Pacman.MenuState" Collapsed="true">
+    <Position X="32.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAggAAAAAAAABAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Enums\MenuState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Pacman.PlayerHealthState" Collapsed="true">
+    <Position X="34.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAACAAAAAA=</HashCode>
+      <FileName>Enums\PlayerHealthState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Pacman.PowerUpType" Collapsed="true">
+    <Position X="36.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAQAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Enums\PowerUpType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Pacman.WallTileNeighbors" Collapsed="true">
+    <Position X="31" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAIAAAAAEAAAAAAAAAAAAAABAAQ=</HashCode>
+      <FileName>Enums\WallTileNeighbors.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
