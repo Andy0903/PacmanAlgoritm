@@ -28,18 +28,12 @@ namespace Pacman
         #region Properties
         public int Column
         {
-            get
-            {
-                return (int)Position.X / Tile.Size;
-            }
+            get { return (int)Position.X / Tile.Size; }
         }
 
         public int Row
         {
-            get
-            {
-                return (int)Position.Y / Tile.Size;
-            }
+            get { return (int)Position.Y / Tile.Size; }
         }
 
         public Rectangle SizeHitbox

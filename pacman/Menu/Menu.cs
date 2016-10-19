@@ -19,7 +19,7 @@ namespace Pacman
         #endregion
         
         #region Public methods
-        public void Update()
+        public virtual void Update()
         {
             KeyPressing();
         }

@@ -6,5 +6,6 @@
         Main,
         Highscore,
         Winning,
+        Option,
     }
 }

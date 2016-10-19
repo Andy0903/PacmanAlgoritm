@@ -64,6 +64,7 @@
     <Compile Include="Menu\MenuManager.cs" />
     <Compile Include="Menu\HighscoreMenu.cs" />
     <Compile Include="Menu\MainMenu.cs" />
+    <Compile Include="Menu\OptionMenu.cs" />
     <Compile Include="Menu\WinningMenu.cs" />
     <Compile Include="Sound\SongManager.cs" />
     <Compile Include="Tiles\BlankTile.cs" />
@@ -81,11 +82,13 @@
     <Compile Include="Tiles\MapBorderTile.cs" />
     <Compile Include="Tiles\TeleportTile.cs" />
     <Compile Include="Tiles\Tile.cs" />
+    <Compile Include="Tooltip.cs" />
     <Compile Include="Utilities\KeyboardUtility.cs" />
     <Compile Include="Utilities\OutlinedText.cs" />
     <Compile Include="Tiles\WallTile.cs" />
     <Compile Include="Enums\WallTileNeighbors.cs" />
     <Compile Include="Sound\SoundEffectManager.cs" />
+    <Compile Include="Utilities\PlayerInput.cs" />
     <Compile Include="Utilities\WindowManager.cs" />
     <Compile Include="Utilities\XboxControllerUtility.cs" />
   </ItemGroup>

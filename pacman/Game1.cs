@@ -147,6 +147,7 @@ namespace Pacman
             mySoundManager = new SongManager();
             myMenuManager = new MenuManager(myFont);
             SoundEffectManager.InitalizeVariables();
+            PlayerInput.Initialize();
         }
 
         private void InitializeLoadContentMemberVariables()

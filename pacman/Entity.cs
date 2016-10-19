@@ -22,6 +22,12 @@ namespace Pacman
             set { myPosition = value; }
         }
 
+        public Vector2 Center
+        {
+            get { return new Vector2(Position.X + myTexutre.Width / 2, Position.Y + myTexutre.Height / 2); }
+            set { Position = new Vector2(value.X - myTexutre.Width / 2, value.Y - myTexutre.Height / 2); }
+        }
+
         protected Texture2D Texture
         {
             get { return myTexutre; }
@@ -39,7 +45,6 @@ namespace Pacman
         virtual public void Draw(SpriteBatch aSpriteBatch, Color? aColor = null)
         {
             aSpriteBatch.Draw(myTexutre, myPosition, aColor ?? Color.White);
-            //If aColor == null, sends Color.White. Otherwise it sends in aColor
         }
         #endregion
 

@@ -21,6 +21,8 @@ namespace Pacman
 
         public event EventHandler HighscoreSelected;
 
+        public event EventHandler OptionsSelected;
+
         public event EventHandler ExitSelected;
 
         #endregion
@@ -35,6 +37,10 @@ namespace Pacman
             else if (KeyboardUtility.WasClicked(Keys.Space) || XboxControllerUtility.WasClicked(PlayerIndex.One, Buttons.Y))
             {
                 HighscoreSelected(this, EventArgs.Empty);
+            }
+            else if (KeyboardUtility.WasClicked(Keys.O)) //EJ stöd av XboxControll.
+            {
+                OptionsSelected(this, EventArgs.Empty);
             }
             else if (KeyboardUtility.WasClicked(Keys.Escape) || XboxControllerUtility.WasClicked(PlayerIndex.One, Buttons.B))
             {
@@ -59,6 +65,7 @@ namespace Pacman
         {
             OutlinedText.DrawWidthCenteredText(aSpriteBatch, myFont, 1.5f, "Press ENTER to start", WindowManager.WindowHeight - WindowManager.WindowHeight / 1.4f, Color.Red);
             OutlinedText.DrawWidthCenteredText(aSpriteBatch, myFont, 1.5f, "Press SPACE for highscores", WindowManager.WindowHeight - WindowManager.WindowHeight / 1.5f, Color.Red);
+            OutlinedText.DrawWidthCenteredText(aSpriteBatch, myFont, 1.5f, "Press O for options", WindowManager.WindowHeight - WindowManager.WindowHeight / 1.6f, Color.Red);
             OutlinedText.DrawWidthCenteredText(aSpriteBatch, myFont, 1.5f, "Press ESCAPE to exit", WindowManager.WindowHeight - WindowManager.WindowHeight / 2f, Color.Red);
         }
         #endregion

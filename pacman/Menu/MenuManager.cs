@@ -10,6 +10,7 @@ namespace Pacman
         MainMenu myMainMenu;
         HighscoreMenu myHighscoreMenu;
         WinningMenu MyWinningMenu;
+        OptionMenu myOptionMenu;
         #endregion
 
         #region Properties
@@ -51,6 +52,9 @@ namespace Pacman
                 case MenuState.Winning:
                     MyWinningMenu.Update();
                     break;
+                case MenuState.Option:
+                    myOptionMenu.Update();
+                    break;
             }
         }
 
@@ -69,6 +73,9 @@ namespace Pacman
                     break;
                 case MenuState.Winning:
                     MyWinningMenu.Draw(aSpriteBatch);
+                    break;
+                case MenuState.Option:
+                    myOptionMenu.Draw(aSpriteBatch);
                     break;
             }
         }
@@ -93,6 +100,7 @@ namespace Pacman
             myMainMenu = new MainMenu(aFont);
             myHighscoreMenu = new HighscoreMenu(aFont);
             MyWinningMenu = new WinningMenu(aFont);
+            myOptionMenu = new OptionMenu(aFont);
         }
 
         private void SetMainMenuListeners()
@@ -100,6 +108,7 @@ namespace Pacman
             myMainMenu.ExitSelected += MenuExitGame;
             myMainMenu.StartSelected += MenuResetAndStartGame;
             myMainMenu.HighscoreSelected += MenuGoToHighscoreMenu;
+            myMainMenu.OptionsSelected += MenuGoToOptionMenu;
         }
 
         private void SetGameOverMenuListeners()
@@ -119,12 +128,18 @@ namespace Pacman
             MyWinningMenu.RestartSelected += MenuResetAndStartGame;
         }
 
+        private void SetOptionMenuListeners()
+        {
+            myOptionMenu.MenuSelected += MenuGoToMenu;
+        }
+
         private void SetListeners()
         {
             SetMainMenuListeners();
             SetGameOverMenuListeners();
             SetHighscoreMenuListeners();
             SetWinningMenuListeners();
+            SetOptionMenuListeners();
         }
 
         private void MenuExitGame(object aSender, EventArgs aEventArgs)
@@ -145,6 +160,11 @@ namespace Pacman
         private void MenuGoToHighscoreMenu(object aSender, EventArgs aEventArgs)
         {
             MenuState = MenuState.Highscore;
+        }
+
+        private void MenuGoToOptionMenu(object aSender, EventArgs aEventArgs)
+        {
+            MenuState = MenuState.Option;
         }
 
         #endregion

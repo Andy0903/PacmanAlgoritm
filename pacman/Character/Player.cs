@@ -30,42 +30,42 @@ namespace Pacman
             private set;
         }
 
-        private bool UserInputUp
-        {
-            get
-            {
-                return (Utilities.KeyboardUtility.WasClicked(Keys.W)
-                     || Utilities.KeyboardUtility.WasClicked(Keys.Up)
-                     || Utilities.XboxControllerUtility.GetLeftThumbStickY(PlayerIndex.One) >= Utilities.XboxControllerUtility.ThumbStickSensitivity);
-            }
-        }
-        private bool UserInputLeft
-        {
-            get
-            {
-                return (Utilities.KeyboardUtility.WasClicked(Keys.A)
-                     || Utilities.KeyboardUtility.WasClicked(Keys.Left)
-                     || Utilities.XboxControllerUtility.GetLeftThumbStickX(PlayerIndex.One) <= -Utilities.XboxControllerUtility.ThumbStickSensitivity);
-            }
-        }
-        private bool UserInputDown
-        {
-            get
-            {
-                return (Utilities.KeyboardUtility.WasClicked(Keys.S)
-                    || Utilities.KeyboardUtility.WasClicked(Keys.Down)
-                    || Utilities.XboxControllerUtility.GetLeftThumbStickY(PlayerIndex.One) <= -Utilities.XboxControllerUtility.ThumbStickSensitivity);
-            }
-        }
-        private bool UserInputRight
-        {
-            get
-            {
-                return (Utilities.KeyboardUtility.WasClicked(Keys.D)
-                    || Utilities.KeyboardUtility.WasClicked(Keys.Right)
-                    || Utilities.XboxControllerUtility.GetLeftThumbStickX(PlayerIndex.One) >= Utilities.XboxControllerUtility.ThumbStickSensitivity);
-            }
-        }
+        //private bool UserInputUp
+        //{
+        //    get
+        //    {
+        //        return (Utilities.KeyboardUtility.WasClicked(Keys.W)
+        //             || Utilities.KeyboardUtility.WasClicked(Keys.Up)
+        //             || Utilities.XboxControllerUtility.GetLeftThumbStickY(PlayerIndex.One) >= Utilities.XboxControllerUtility.ThumbStickSensitivity);
+        //    }
+        //}
+        //private bool UserInputLeft
+        //{
+        //    get
+        //    {
+        //        return (Utilities.KeyboardUtility.WasClicked(Keys.A)
+        //             || Utilities.KeyboardUtility.WasClicked(Keys.Left)
+        //             || Utilities.XboxControllerUtility.GetLeftThumbStickX(PlayerIndex.One) <= -Utilities.XboxControllerUtility.ThumbStickSensitivity);
+        //    }
+        //}
+        //private bool UserInputDown
+        //{
+        //    get
+        //    {
+        //        return (Utilities.KeyboardUtility.WasClicked(Keys.S)
+        //            || Utilities.KeyboardUtility.WasClicked(Keys.Down)
+        //            || Utilities.XboxControllerUtility.GetLeftThumbStickY(PlayerIndex.One) <= -Utilities.XboxControllerUtility.ThumbStickSensitivity);
+        //    }
+        //}
+        //private bool UserInputRight
+        //{
+        //    get
+        //    {
+        //        return (Utilities.KeyboardUtility.WasClicked(Keys.D)
+        //            || Utilities.KeyboardUtility.WasClicked(Keys.Right)
+        //            || Utilities.XboxControllerUtility.GetLeftThumbStickX(PlayerIndex.One) >= Utilities.XboxControllerUtility.ThumbStickSensitivity);
+        //    }
+        //}
         #endregion
 
         #region Constructors
@@ -158,21 +158,26 @@ namespace Pacman
         {
             if (PlayerHealthState == PlayerHealthState.Alive)
             {
-                if (UserInputUp)
+                //if (PlayerInput.Up)
+                //{
+                //    Direction = Direction.Up;
+                //}
+                //if (PlayerInput.Left)
+                //{
+                //    Direction = Direction.Left;
+                //}
+                //if (PlayerInput.Down)
+                //{
+                //    Direction = Direction.Down;
+                //}
+                //if (PlayerInput.Right)
+                //{
+                //    Direction = Direction.Right;
+                //}
+
+                if (PlayerInput.GetDirection() != Direction.NONE)
                 {
-                    Direction = Direction.Up;
-                }
-                if (UserInputLeft)
-                {
-                    Direction = Direction.Left;
-                }
-                if (UserInputDown)
-                {
-                    Direction = Direction.Down;
-                }
-                if (UserInputRight)
-                {
-                    Direction = Direction.Right;
+                    Direction = PlayerInput.GetDirection();
                 }
 
                 RotateAnimation();
