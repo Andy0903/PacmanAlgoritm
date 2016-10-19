@@ -42,6 +42,7 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Camera.cs" />
     <Compile Include="Character\BlueGhost.cs" />
     <Compile Include="Character\Ghost.cs" />
     <Compile Include="Character\OrangeGhost.cs" />
@@ -82,7 +83,7 @@
     <Compile Include="Tiles\MapBorderTile.cs" />
     <Compile Include="Tiles\TeleportTile.cs" />
     <Compile Include="Tiles\Tile.cs" />
-    <Compile Include="Tooltip.cs" />
+    <Compile Include="Menu\Tooltip.cs" />
     <Compile Include="Utilities\KeyboardUtility.cs" />
     <Compile Include="Utilities\OutlinedText.cs" />
     <Compile Include="Tiles\WallTile.cs" />

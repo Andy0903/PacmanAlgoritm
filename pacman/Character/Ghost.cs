@@ -313,7 +313,11 @@ namespace Pacman
 
         }
 
-        private Tile FindNextTile(int aColumn, int aRow)
+
+        //Steg 1: Bygg en graf så du slipper kolla bounds etc. (Får kolla sånt medan du bygger grafen). Närhetsmatris/Närhetslista --> matris
+        //Steg 2: Gör sökningen så du får fram pathen. abstract -> overrides av alla spöken        abstract SearchAlgoritm... BFS etc kallas ur overrided
+        //Steg 3: Fucka hela pathen. Du får pathen i termer av grafen -> översett den till en tile. Tilen är första steget i grafen dvs steget spöket ska ta.
+        private Tile FindNextTile(int aColumn, int aRow) //BFS
         {
             Queue<Tile> queue = new Queue<Tile>();
             Dictionary<Tile, Tile> parents = new Dictionary<Tile, Tile>();
@@ -330,12 +334,12 @@ namespace Pacman
                     return WalkBackwardsFromParent(parents, tile, currentTile);
                 }
 
-                AddChildrenToQueue(queue, parents, tile);
+                AddChildren(queue, parents, tile);
             }
             return null;
         }
 
-        private void AddChildrenToQueue(Queue<Tile> aQueue, Dictionary<Tile, Tile> aParents, Tile aTile)
+        private void AddChildren(Queue<Tile> aQueue, Dictionary<Tile, Tile> aParents, Tile aTile) //GetNeighbours. Returnerar en lista av legit neighbours
         {
             Tile[] children = new Tile[]
             {
@@ -347,15 +351,16 @@ namespace Pacman
 
             foreach (Tile child in children)
             {
-                if (child != null && aParents.ContainsKey(child) == false)
+                if (child != null //&& aParents.ContainsKey(child) == false)
                 {
+                    //terutn neighbours
                     aQueue.Enqueue(child);
                     aParents.Add(child, aTile);
                 }
             }
         }
 
-        private Tile WalkBackwardsFromParent(Dictionary<Tile, Tile> aParents, Tile aTile, Tile aCurrentTile)
+        private Tile WalkBackwardsFromParent(Dictionary<Tile, Tile> aParents, Tile aTile, Tile aCurrentTile) //Plocka ut till första. Håll koll på hela pathen -> ta ut första.
         {
             while (aTile != null)
             {

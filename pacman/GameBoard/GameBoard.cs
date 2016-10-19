@@ -166,6 +166,7 @@ namespace Pacman
             myItemFactory = new ItemFactory();
             myGhosts = new List<Ghost>();
             InitializeBoardFromFile();
+            Camera.Initlaize(Player, new Rectangle(0, 0, 4000, 4000));
         }
 
         private void InitializeParameterMemberVariables(SpriteFont aFont)

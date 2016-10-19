@@ -59,10 +59,12 @@ namespace Pacman
             switch (myGameState)
             {
                 case GameState.Playing:
+                    Camera.Update();
                     myGameBoard.Update(aGameTime);
                     SoundEffectManager.Update(aGameTime);
                     break;
                 case GameState.Menu:
+                    Camera.Reset();
                     myMenuManager.Update();
                     break;
             }
@@ -74,7 +76,7 @@ namespace Pacman
         protected override void Draw(GameTime aGameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-            mySpriteBatch.Begin();
+            mySpriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointWrap, null, null, null, Camera.TranslationMatrix);
 
             switch (myGameState)
             {
@@ -148,6 +150,7 @@ namespace Pacman
             myMenuManager = new MenuManager(myFont);
             SoundEffectManager.InitalizeVariables();
             PlayerInput.Initialize();
+            Camera.Reset();
         }
 
         private void InitializeLoadContentMemberVariables()
