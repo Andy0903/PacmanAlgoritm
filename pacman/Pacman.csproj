@@ -54,6 +54,7 @@
     <Compile Include="Enums\MenuState.cs" />
     <Compile Include="Enums\PlayerHealthState.cs" />
     <Compile Include="Enums\PowerUpType.cs" />
+    <Compile Include="Graph.cs" />
     <Compile Include="Item\Cherry.cs" />
     <Compile Include="Item\Item.cs" />
     <Compile Include="Item\Key.cs" />

@@ -9,7 +9,6 @@ namespace Pacman
     {
         #region Member variables
         GhostHealthState myGhostHealthState;
-
         protected readonly int myDefaultFrameYIndex;
         #endregion
 
@@ -314,62 +313,25 @@ namespace Pacman
         }
 
 
-        //Steg 1: Bygg en graf så du slipper kolla bounds etc. (Får kolla sånt medan du bygger grafen). Närhetsmatris/Närhetslista --> matris
+        //Steg 1: Bygg en graf så du slipper kolla bounds etc. (Får kolla sånt medan du bygger grafen). Närhetsmatris/Närhetslista --> matris ON THE FLY
         //Steg 2: Gör sökningen så du får fram pathen. abstract -> overrides av alla spöken        abstract SearchAlgoritm... BFS etc kallas ur overrided
         //Steg 3: Fucka hela pathen. Du får pathen i termer av grafen -> översett den till en tile. Tilen är första steget i grafen dvs steget spöket ska ta.
-        private Tile FindNextTile(int aColumn, int aRow) //BFS
+        protected abstract List<Tile> FindPath(Graph aGraph, Tile aStart, Tile aGoal); //TODO ABSTRACT
+
+        protected List<Tile> GetPathList(Tile aCurrentlyWorkingOn, Tile aStart, Dictionary<Tile, Tile> aVisited)
         {
-            Queue<Tile> queue = new Queue<Tile>();
-            Dictionary<Tile, Tile> parents = new Dictionary<Tile, Tile>();
+            List<Tile> path = new List<Tile>();
 
-            Tile currentTile = myGameBoard.GetWalkableTile(Row, Column);
-            queue.Enqueue(currentTile);
-
-            while (queue.Count != 0)
+            while (aCurrentlyWorkingOn != null)
             {
-                Tile tile = queue.Dequeue();
-
-                if (aColumn == tile.Column && aRow == tile.Row)
+                Tile cameFrom;
+                if (aVisited.TryGetValue(aCurrentlyWorkingOn, out cameFrom))
                 {
-                    return WalkBackwardsFromParent(parents, tile, currentTile);
-                }
-
-                AddChildren(queue, parents, tile);
-            }
-            return null;
-        }
-
-        private void AddChildren(Queue<Tile> aQueue, Dictionary<Tile, Tile> aParents, Tile aTile) //GetNeighbours. Returnerar en lista av legit neighbours
-        {
-            Tile[] children = new Tile[]
-            {
-                myGameBoard.GetWalkableTile(aTile.Row - 1, aTile.Column),
-                myGameBoard.GetWalkableTile(aTile.Row, aTile.Column - 1),
-                myGameBoard.GetWalkableTile(aTile.Row + 1, aTile.Column),
-                myGameBoard.GetWalkableTile(aTile.Row, aTile.Column + 1),
-            };
-
-            foreach (Tile child in children)
-            {
-                if (child != null //&& aParents.ContainsKey(child) == false)
-                {
-                    //terutn neighbours
-                    aQueue.Enqueue(child);
-                    aParents.Add(child, aTile);
-                }
-            }
-        }
-
-        private Tile WalkBackwardsFromParent(Dictionary<Tile, Tile> aParents, Tile aTile, Tile aCurrentTile) //Plocka ut till första. Håll koll på hela pathen -> ta ut första.
-        {
-            while (aTile != null)
-            {
-                Tile parent;
-                if (aParents.TryGetValue(aTile, out parent))
-                {
-                    if (parent == aCurrentTile)
+                    path.Add(aCurrentlyWorkingOn);
+                    if (cameFrom == aStart)
                     {
-                        return aTile;
+                        path.Reverse();
+                        return path;
                     }
                 }
                 else
@@ -377,9 +339,20 @@ namespace Pacman
                     return null;
                 }
 
-                aTile = parent;
+                aCurrentlyWorkingOn = cameFrom;
             }
             return null;
+        }
+
+        private Tile FindNextTile(int aColumn, int aRow)
+        {
+            Tile start = myGameBoard.GetWalkableTile(Row, Column);
+            Tile goal = myGameBoard.GetWalkableTile(aRow, aColumn);
+            Graph graph = new Graph(myGameBoard);
+
+            List<Tile> path = FindPath(graph, start, goal);
+
+            return (path == null || path.Count < 1) ? null : path[0];
         }
         #endregion
     }

@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 
 namespace Pacman
 {
@@ -15,6 +17,11 @@ namespace Pacman
         override protected Vector2? AliveMovement()
         {
             return Movement();
+        }
+
+        protected override List<Tile> FindPath(Graph aGraph, Tile aStart, Tile aGoal)
+        {
+            throw new NotImplementedException();
         }
         #endregion
 

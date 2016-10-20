@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 
 namespace Pacman
 {
@@ -71,6 +73,11 @@ namespace Pacman
                     return myGameBoard.ValidTargetPosition(Row + 1, Column);
             }
             return null;
+        }
+
+        protected override List<Tile> FindPath(Graph aGraph, Tile aStart, Tile aGoal)
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }
