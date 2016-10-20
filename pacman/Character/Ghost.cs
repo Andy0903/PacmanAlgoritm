@@ -61,7 +61,7 @@ namespace Pacman
             return null;
         }
 
-        protected Vector2? AvoidPositionEfficiently(Vector2 aPosition)
+        protected Vector2? AvoidPositionEfficiently(Vector2 aPosition) //TODO rename
         {
             Direction bestDirection = Direction;
             Vector2? bestTarget = null;
@@ -103,7 +103,7 @@ namespace Pacman
             return null;
         }
 
-        protected Vector2? GoToPositionEfficiently(int aColumn, int aRow)
+        protected Vector2? GoToPositionEfficiently(int aColumn, int aRow) //TODO rename
         {
             Tile nextTile = FindNextTile(aColumn, aRow);
 

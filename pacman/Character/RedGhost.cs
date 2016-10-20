@@ -21,6 +21,13 @@ namespace Pacman
 
         protected override List<Tile> FindPath(Graph aGraph, Tile aStart, Tile aGoal)
         {
+            return BreadthFirstSearch(aGraph, aStart, aGoal);
+        }
+        #endregion
+
+        #region Private methods
+        private List<Tile> BreadthFirstSearch(Graph aGraph, Tile aStart, Tile aGoal)
+        {
             Queue<Tile> queue = new Queue<Tile>();
             Dictionary<Tile, Tile> visisted = new Dictionary<Tile, Tile>(); //value is the tile from which we reached key.
             queue.Enqueue(aStart);
