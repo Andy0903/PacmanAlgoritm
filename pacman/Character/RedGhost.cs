@@ -14,11 +14,6 @@ namespace Pacman
         #endregion
 
         #region Protected methods
-        override protected Vector2? AliveMovement()
-        {
-            return GoToPositionEfficiently(Player.Column, Player.Row);
-        }
-
         protected override List<Tile> FindPath(Graph aGraph, Tile aStart, Tile aGoal)
         {
             return BreadthFirstSearch(aGraph, aStart, aGoal);

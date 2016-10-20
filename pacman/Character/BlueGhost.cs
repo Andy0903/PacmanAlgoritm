@@ -14,45 +14,15 @@ namespace Pacman
         #endregion
 
         #region Protected methods
-        override protected Vector2? AliveMovement()
-        {
-            return Movement();
-        }
-
         protected override List<Tile> FindPath(Graph aGraph, Tile aStart, Tile aGoal)
         {
-            throw new NotImplementedException();
+            return null;
         }
         #endregion
 
         #region Private methods
-        Vector2? Movement()
-        {
-            int randomNumber = GameBoard.myRandom.Next(0, 4);
 
-            Vector2? target = null;
-
-            switch (randomNumber)
-            {
-                case 0:
-                    Direction = Direction.Up;
-                    target = myGameBoard.ValidTargetPosition(Row - 1, Column);
-                    break;
-                case 1:
-                    Direction = Direction.Left;
-                    target = myGameBoard.ValidTargetPosition(Row, Column - 1);
-                    break;
-                case 2:
-                    Direction = Direction.Down;
-                    target = myGameBoard.ValidTargetPosition(Row + 1, Column);
-                    break;
-                case 3:
-                    Direction = Direction.Right;
-                    target = myGameBoard.ValidTargetPosition(Row, Column + 1);
-                    break;
-            }
-            return target;
-        }
         #endregion
+
     }
 }

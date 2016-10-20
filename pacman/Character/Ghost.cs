@@ -45,7 +45,10 @@ namespace Pacman
         #endregion
 
         #region Protected methods    
-        abstract protected Vector2? AliveMovement();
+        protected Vector2? AliveMovement()
+        {
+            return GoToPositionEfficiently(Player.Column, Player.Row);
+        }
 
         protected override Vector2? NextTarget()
         {
