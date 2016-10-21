@@ -1,7 +1,0 @@
-Hashtabell -> Keybidnings
-Djkstra
-A*
-BFS
-DFS
-
-KAMERA BIGGER MAP THAN SCREEN
