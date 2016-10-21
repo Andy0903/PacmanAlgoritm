@@ -17,7 +17,7 @@ namespace Pacman
         #region Protected methods
         protected override List<Tile> FindPath(Graph aGraph, Tile aStart, Tile aGoal)
         {
-            return null;  DijkstrasAlgorithm(aGraph, aStart, aGoal);
+            return null;//DijkstrasAlgorithm(aGraph, aStart, aGoal);
         }
         #endregion
 
@@ -68,7 +68,7 @@ namespace Pacman
 
                 foreach (Tile neighbour in aGraph.GetNeighbours(minimumDistanceTile))
                 {
-                    float dist = distance[minimumDistanceTile] + 1;
+                    float dist = distance[minimumDistanceTile] + aGraph.GetWeight(minimumDistanceTile, neighbour);
 
                     if (dist < distance[neighbour])
                     {

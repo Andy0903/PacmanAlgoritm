@@ -44,5 +44,14 @@ namespace Pacman
             tiles = tiles.FindAll(n => n != null);
             return tiles;
         }
+
+        public float GetWeight(Tile aSource, Tile aDestination)
+        {
+            if (GetNeighbours(aSource).Contains(aDestination))
+            {
+                return 1;
+            }
+            return float.PositiveInfinity;
+        }
     }
 }

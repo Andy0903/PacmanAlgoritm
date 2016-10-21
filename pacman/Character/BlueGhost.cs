@@ -21,6 +21,10 @@ namespace Pacman
         #endregion
 
         #region Private methods
+        private List<Tile> AStar(Graph aGraph, Tile aStart, Tile aGoal)
+        {
+            return null;
+        }
         #endregion
 
     }
