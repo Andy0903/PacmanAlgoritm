@@ -45,17 +45,12 @@ namespace Pacman
         #endregion
 
         #region Protected methods    
-        protected Vector2? AliveMovement()
-        {
-            return GoToPositionEfficiently(Player.Column, Player.Row);
-        }
-
         protected override Vector2? NextTarget()
         {
             switch (myGhostHealthState)
             {
                 case GhostHealthState.Alive:
-                    return AliveMovement();
+                    return GoToPositionEfficiently(Player.Column, Player.Row);
                 case GhostHealthState.Scared:
                     return AvoidPositionEfficiently(Player.Position);
                 case GhostHealthState.Dead:

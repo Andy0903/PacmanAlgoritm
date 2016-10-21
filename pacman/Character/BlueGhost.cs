@@ -21,7 +21,6 @@ namespace Pacman
         #endregion
 
         #region Private methods
-
         #endregion
 
     }

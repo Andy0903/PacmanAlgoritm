@@ -50,6 +50,11 @@ namespace Pacman
             get;
             set;
         }
+
+        public int Rows
+        {
+            get { return myTiles.Length; }
+        }
         #endregion
 
         #region Constructors
@@ -66,6 +71,11 @@ namespace Pacman
         #endregion
 
         #region Public methods
+        public int Colums(int aRow)
+        {
+            return myTiles[aRow].Length;
+        }
+
         public void Reset()
         {
             ResetTiles();

@@ -16,7 +16,7 @@ namespace Pacman
         #region Protected methods
         protected override List<Tile> FindPath(Graph aGraph, Tile aStart, Tile aGoal)
         {
-            return BreadthFirstSearch(aGraph, aStart, aGoal);
+            return null;//BreadthFirstSearch(aGraph, aStart, aGoal);
         }
         #endregion
 
@@ -33,8 +33,7 @@ namespace Pacman
 
                 if (tile == aGoal)
                 {
-                    List<Tile> path = GetPathList(tile, aStart, visisted);
-                    return path;
+                    return GetPathList(tile, aStart, visisted);
                 }
 
                 foreach (Tile neighbour in aGraph.GetNeighbours(tile))

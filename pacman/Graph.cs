@@ -28,5 +28,21 @@ namespace Pacman
 
             return neighbours;
         }
+
+        public List<Tile> GetAllTiles()
+        {
+            List<Tile> tiles = new List<Tile>();
+
+            for (int i = 0; i < myGameBoard.Rows; i++)
+            {
+                for (int k = 0; k < myGameBoard.Colums(i); k++)
+                {
+                    tiles.Add(myGameBoard.GetWalkableTile(i, k));
+                }
+            }
+
+            tiles = tiles.FindAll(n => n != null);
+            return tiles;
+        }
     }
 }
