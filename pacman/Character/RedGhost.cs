@@ -16,7 +16,7 @@ namespace Pacman
         #region Protected methods
         protected override List<Tile> FindPath(Graph aGraph, Tile aStart, Tile aGoal)
         {
-            return null;//BreadthFirstSearch(aGraph, aStart, aGoal);
+            return BreadthFirstSearch(aGraph, aStart, aGoal);
         }
         #endregion
 
@@ -29,19 +29,19 @@ namespace Pacman
 
             while (queue.Count > 0)
             {
-                Tile tile = queue.Dequeue();
+                Tile current = queue.Dequeue();
 
-                if (tile == aGoal)
+                if (current == aGoal)
                 {
-                    return GetPathList(tile, aStart, visisted);
+                    return GetPathList(current, aStart, visisted);
                 }
 
-                foreach (Tile neighbour in aGraph.GetNeighbours(tile))
+                foreach (Tile neighbour in aGraph.GetNeighbours(current))
                 {
                     if (visisted.ContainsKey(neighbour) == false)
                     {
                         queue.Enqueue(neighbour);
-                        visisted.Add(neighbour, tile);
+                        visisted.Add(neighbour, current);
                     }
                 }
             }

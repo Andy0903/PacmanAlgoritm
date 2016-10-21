@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using System.Linq;
 
 namespace Pacman
 {
@@ -17,7 +16,7 @@ namespace Pacman
         #region Protected methods
         protected override List<Tile> FindPath(Graph aGraph, Tile aStart, Tile aGoal)
         {
-            return null;//DijkstrasAlgorithm(aGraph, aStart, aGoal);
+            return DijkstrasAlgorithm(aGraph, aStart, aGoal);
         }
         #endregion
 
