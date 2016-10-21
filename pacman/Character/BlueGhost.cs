@@ -16,14 +16,83 @@ namespace Pacman
         #region Protected methods
         protected override List<Tile> FindPath(Graph aGraph, Tile aStart, Tile aGoal)
         {
-            return null;
+            return AStar(aGraph, aStart, aGoal);
         }
         #endregion
 
         #region Private methods
         private List<Tile> AStar(Graph aGraph, Tile aStart, Tile aGoal)
         {
+            HashSet<Tile> alreadyEvaluated = new HashSet<Tile>();
+            HashSet<Tile> currentlyDiscovered = new HashSet<Tile>();
+
+            Dictionary<Tile, Tile> visisted = new Dictionary<Tile, Tile>(); //value is the tile from which we reached key.
+            Dictionary<Tile, float> distance = new Dictionary<Tile, float>();
+
+            currentlyDiscovered.Add(aStart);
+            foreach (Tile tile in aGraph.GetAllTiles())
+            {
+                distance.Add(tile, float.PositiveInfinity);
+            }
+
+            Dictionary<Tile, float> estimatedDistanceToGoal = distance;
+            distance[aStart] = 0;
+            estimatedDistanceToGoal[aStart] = HeuristicCostEstimate(aStart, aGoal);
+
+            while (0 < currentlyDiscovered.Count)
+            {
+                Tile current = GetDiscoveredWithLowestCostEstimate(currentlyDiscovered, aGoal);
+
+                if (current == aGoal)
+                {
+                    return GetPathList(current, aStart, visisted);
+                }
+
+                currentlyDiscovered.Remove(current);
+                alreadyEvaluated.Add(current);
+
+                foreach (Tile neighbour in aGraph.GetNeighbours(current))
+                {
+                    if (alreadyEvaluated.Contains(neighbour)) { continue; }
+
+                    float unconfirmedDistance = distance[current] + aGraph.GetWeight(current, neighbour);
+
+                    if (currentlyDiscovered.Contains(neighbour) == false)
+                    {
+                        currentlyDiscovered.Add(neighbour);
+                    }
+                    else if(unconfirmedDistance >= distance[neighbour]) { continue; }
+
+                    visisted.Add(neighbour, current);
+                    distance[neighbour] = unconfirmedDistance;
+                    estimatedDistanceToGoal[neighbour] = distance[neighbour] + HeuristicCostEstimate(neighbour, aGoal);
+                }
+            }
+
             return null;
+        }
+
+        private Tile GetDiscoveredWithLowestCostEstimate(HashSet<Tile> aCurrentlyDiscovered, Tile aGoal)
+        {
+            Tile closest = null;
+            float minDistance = float.PositiveInfinity;
+
+            foreach (Tile tile in aCurrentlyDiscovered)
+            {
+                if (HeuristicCostEstimate(tile, aGoal) < minDistance)
+                {
+                    closest = tile;
+                    minDistance = HeuristicCostEstimate(tile, aGoal);
+                }
+            }
+
+            return closest;
+        }
+
+        private float HeuristicCostEstimate(Tile aStart, Tile aGoal)
+        {
+            float distance = Vector2.Distance(aStart.Position, aGoal.Position);
+            return distance / Tile.Size;
         }
         #endregion
 
