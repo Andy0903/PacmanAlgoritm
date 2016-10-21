@@ -15,7 +15,7 @@ namespace Pacman
             myGameBoard = aGameBoard;
         }
         
-        public List<Tile> GetNeighbours(Tile aTile) //GetNeighbours. Returnerar en lista av legit neighbours
+        public List<Tile> GetNeighbours(Tile aTile)
         {
             List<Tile> neighbours = new List<Tile>();
             

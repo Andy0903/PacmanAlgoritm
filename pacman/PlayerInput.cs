@@ -6,31 +6,31 @@ namespace Pacman
 {
     static class PlayerInput
     {
-        static Dictionary<Keys, Direction> myKeybindings;
+        static Hashtable<Keys, Direction> myKeybindings;
         static bool myRemovedAKey;
         static Keys myRecentlyRemovedKey;
         static Direction myRecentlyRemovedDirection;
 
         public static void Initialize()
         {
-            myKeybindings = new Dictionary<Keys, Direction>();
+            myKeybindings = new Hashtable<Keys, Direction>(20);
             myRemovedAKey = false;
             SetDefaultKeybindings();
         }
 
         private static void SetDefaultKeybindings()
         {
-            myKeybindings.Add(Keys.W, Direction.Up);
-            myKeybindings.Add(Keys.Up, Direction.Up);
+            myKeybindings.Put(Keys.W, Direction.Up);
+            myKeybindings.Put(Keys.Up, Direction.Up);
 
-            myKeybindings.Add(Keys.A, Direction.Left);
-            myKeybindings.Add(Keys.Left, Direction.Left);
+            myKeybindings.Put(Keys.A, Direction.Left);
+            myKeybindings.Put(Keys.Left, Direction.Left);
 
-            myKeybindings.Add(Keys.S, Direction.Down);
-            myKeybindings.Add(Keys.Down, Direction.Down);
+            myKeybindings.Put(Keys.S, Direction.Down);
+            myKeybindings.Put(Keys.Down, Direction.Down);
 
-            myKeybindings.Add(Keys.D, Direction.Right);
-            myKeybindings.Add(Keys.Right, Direction.Right);
+            myKeybindings.Put(Keys.D, Direction.Right);
+            myKeybindings.Put(Keys.Right, Direction.Right);
         }
 
         public static void CheckIfClickedAssignedKey()
@@ -61,7 +61,7 @@ namespace Pacman
                     if (Utilities.KeyboardUtility.GetLastClickedKey() != myRecentlyRemovedKey &&
                         myKeybindings.ContainsKey(Utilities.KeyboardUtility.GetLastClickedKey()) == false)
                     {
-                        myKeybindings.Add(Utilities.KeyboardUtility.GetLastClickedKey(), myRecentlyRemovedDirection);
+                        myKeybindings.Put(Utilities.KeyboardUtility.GetLastClickedKey(), myRecentlyRemovedDirection);
                         myRemovedAKey = false;
                         myRecentlyRemovedDirection = Direction.NONE;
                     }

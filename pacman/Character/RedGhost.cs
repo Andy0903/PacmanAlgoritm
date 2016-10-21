@@ -24,7 +24,7 @@ namespace Pacman
         private List<Tile> BreadthFirstSearch(Graph aGraph, Tile aStart, Tile aGoal)
         {
             Queue<Tile> queue = new Queue<Tile>();
-            Dictionary<Tile, Tile> visisted = new Dictionary<Tile, Tile>(); //value is the tile from which we reached key.
+            Hashtable<Tile, Tile> visisted = new Hashtable<Tile, Tile>(400); //value is the tile from which we reached key.
             queue.Enqueue(aStart);
 
             while (queue.Count > 0)
@@ -41,7 +41,7 @@ namespace Pacman
                     if (visisted.ContainsKey(neighbour) == false)
                     {
                         queue.Enqueue(neighbour);
-                        visisted.Add(neighbour, current);
+                        visisted.Put(neighbour, current);
                     }
                 }
             }

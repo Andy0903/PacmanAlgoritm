@@ -21,7 +21,7 @@ namespace Pacman
         #endregion
 
         #region Private methods
-        private Tile GetUnvisitedWithShortestDistance(HashSet<Tile> aUnvisited, Dictionary<Tile, float> aDistance)
+        private Tile GetUnvisitedWithShortestDistance(HashSet<Tile> aUnvisited, Hashtable<Tile, float> aDistance)
         {       
             Tile closest = null;
             float minDistance = float.PositiveInfinity;
@@ -42,13 +42,13 @@ namespace Pacman
         private List<Tile> DijkstrasAlgorithm(Graph aGraph, Tile aStart, Tile aGoal)
         {
             HashSet<Tile> unvisited = new HashSet<Tile>();
-            Dictionary<Tile, Tile> visisted = new Dictionary<Tile, Tile>(); //value is the tile from which we reached key.
+            Hashtable<Tile, Tile> visisted = new Hashtable<Tile, Tile>(400); //value is the tile from which we reached key.
 
-            Dictionary<Tile, float> distance = new Dictionary<Tile, float>();
+            Hashtable<Tile, float> distance = new Hashtable<Tile, float>(400);
 
             foreach (Tile tile in aGraph.GetAllTiles())
             {
-                distance.Add(tile, float.PositiveInfinity);
+                distance.Put(tile, float.PositiveInfinity);
                 unvisited.Add(tile);
             }
 
@@ -72,7 +72,7 @@ namespace Pacman
                     if (dist < distance[neighbour])
                     {
                         distance[neighbour] = dist;
-                        visisted.Add(neighbour, minimumDistanceTile);
+                        visisted.Put(neighbour, minimumDistanceTile);
                     }
                 }
             }

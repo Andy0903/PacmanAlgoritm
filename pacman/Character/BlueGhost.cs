@@ -26,16 +26,16 @@ namespace Pacman
             HashSet<Tile> alreadyEvaluated = new HashSet<Tile>();
             HashSet<Tile> currentlyDiscovered = new HashSet<Tile>();
 
-            Dictionary<Tile, Tile> visisted = new Dictionary<Tile, Tile>(); //value is the tile from which we reached key.
-            Dictionary<Tile, float> distance = new Dictionary<Tile, float>();
+            Hashtable<Tile, Tile> visisted = new Hashtable<Tile, Tile>(400); //value is the tile from which we reached key.
+            Hashtable<Tile, float> distance = new Hashtable<Tile, float>(400);
 
             currentlyDiscovered.Add(aStart);
             foreach (Tile tile in aGraph.GetAllTiles())
             {
-                distance.Add(tile, float.PositiveInfinity);
+                distance.Put(tile, float.PositiveInfinity);
             }
 
-            Dictionary<Tile, float> estimatedDistanceToGoal = distance;
+            Hashtable<Tile, float> estimatedDistanceToGoal = distance;
             distance[aStart] = 0;
             estimatedDistanceToGoal[aStart] = HeuristicCostEstimate(aStart, aGoal);
 
@@ -63,7 +63,7 @@ namespace Pacman
                     }
                     else if(unconfirmedDistance >= distance[neighbour]) { continue; }
 
-                    visisted.Add(neighbour, current);
+                    visisted.Put(neighbour, current);
                     distance[neighbour] = unconfirmedDistance;
                     estimatedDistanceToGoal[neighbour] = distance[neighbour] + HeuristicCostEstimate(neighbour, aGoal);
                 }

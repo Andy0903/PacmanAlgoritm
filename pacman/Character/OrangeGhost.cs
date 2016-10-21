@@ -23,7 +23,7 @@ namespace Pacman
         #region Private methods
         private List<Tile> DepthFirstSearch(Graph aGraph, Tile aStart, Tile aGoal)
         {
-            Dictionary<Tile, Tile> visisted = new Dictionary<Tile, Tile>(); //value is the tile from which we reached key.
+            Hashtable<Tile, Tile> visisted = new Hashtable<Tile, Tile>(400); //value is the tile from which we reached key.
             Stack<Tile> stack = new Stack<Tile>();
             stack.Push(aStart);
 
@@ -41,7 +41,7 @@ namespace Pacman
                     if (visisted.ContainsKey(neighbour) == false)
                     {
                         stack.Push(neighbour);
-                        visisted.Add(neighbour, current);
+                        visisted.Put(neighbour, current);
                     }
                 }
             }

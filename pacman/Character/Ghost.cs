@@ -50,16 +50,16 @@ namespace Pacman
             switch (myGhostHealthState)
             {
                 case GhostHealthState.Alive:
-                    return GoToPositionEfficiently(Player.Column, Player.Row);
+                    return GoToPosition(Player.Column, Player.Row);
                 case GhostHealthState.Scared:
-                    return AvoidPositionEfficiently(Player.Position);
+                    return AvoidPosition(Player.Position);
                 case GhostHealthState.Dead:
-                    return GoToPositionEfficiently((int)SpawnPosition.X / Tile.Size, (int)SpawnPosition.Y / Tile.Size);
+                    return GoToPosition((int)SpawnPosition.X / Tile.Size, (int)SpawnPosition.Y / Tile.Size);
             }
             return null;
         }
 
-        protected Vector2? AvoidPositionEfficiently(Vector2 aPosition) //TODO rename
+        protected Vector2? AvoidPosition(Vector2 aPosition)
         {
             Direction bestDirection = Direction;
             Vector2? bestTarget = null;
@@ -101,7 +101,7 @@ namespace Pacman
             return null;
         }
 
-        protected Vector2? GoToPositionEfficiently(int aColumn, int aRow) //TODO rename
+        protected Vector2? GoToPosition(int aColumn, int aRow)
         {
             Tile nextTile = FindNextTile(aColumn, aRow);
 
@@ -310,13 +310,9 @@ namespace Pacman
 
         }
 
+        protected abstract List<Tile> FindPath(Graph aGraph, Tile aStart, Tile aGoal);
 
-        //Steg 1: Bygg en graf så du slipper kolla bounds etc. (Får kolla sånt medan du bygger grafen). Närhetsmatris/Närhetslista --> matris ON THE FLY
-        //Steg 2: Gör sökningen så du får fram pathen. abstract -> overrides av alla spöken        abstract SearchAlgoritm... BFS etc kallas ur overrided
-        //Steg 3: Fucka hela pathen. Du får pathen i termer av grafen -> översett den till en tile. Tilen är första steget i grafen dvs steget spöket ska ta.
-        protected abstract List<Tile> FindPath(Graph aGraph, Tile aStart, Tile aGoal); //TODO ABSTRACT
-
-        protected List<Tile> GetPathList(Tile aCurrentlyWorkingOn, Tile aStart, Dictionary<Tile, Tile> aVisited)
+        protected List<Tile> GetPathList(Tile aCurrentlyWorkingOn, Tile aStart, Hashtable<Tile, Tile> aVisited)
         {
             List<Tile> path = new List<Tile>();
 
